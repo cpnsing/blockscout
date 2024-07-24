@@ -144,7 +144,7 @@ export default function useNavItems(): ReturnType {
       } : null,
       {
         text: 'Testnet',
-        nextRoute: { pathname: '/testnet' as const },
+        nextRoute: { pathname: '/' as const },
 
 
       },

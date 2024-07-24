@@ -19,16 +19,16 @@ interface Props {
 }
 
 const AddressCoinBalanceChart = ({ addressHash }: Props) => {
-  const { data, isLoading, isError } = useApiQuery<ApiResponse>('address_coin_balance_chart', {
+  const { data, isLoading, isError } = useApiQuery('address_coin_balance_chart', {
     pathParams: { hash: addressHash },
   });
 
   const items = React.useMemo(() => {
-    return data?.items?.map(({ date, value }) => ({
+    return data?.map(({ date, value }) => ({
       date: new Date(date),
       value: new BigNumber(value).div(10 ** appConfig.network.currency.decimals).toNumber(),
     }));
-  }, [data?.items]);
+  }, [data]);
   console.log(">>>>>>>>items", items);
 
   return (

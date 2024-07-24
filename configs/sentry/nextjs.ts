@@ -1,4 +1,4 @@
-import type { NextjsOptions } from '@sentry/nextjs/types/utils/nextjsOptions';
+import type { NextjsOptions } from "@sentry/nextjs/types/utils/nextjsOptions";
 
 const config: NextjsOptions = {
   environment: process.env.NODE_ENV,
@@ -12,27 +12,27 @@ const config: NextjsOptions = {
   // were taken from here - https://docs.sentry.io/platforms/node/guides/azure-functions/configuration/filtering/#decluttering-sentry
   ignoreErrors: [
     // Random plugins/extensions
-    'top.GLOBALS',
+    "top.GLOBALS",
     // See: http://blog.errorception.com/2012/03/tale-of-unfindable-js-error.html
-    'originalCreateNotification',
-    'canvas.contentDocument',
-    'MyApp_RemoveAllHighlights',
-    'http://tt.epicplay.com',
-    'Can\'t find variable: ZiteReader',
-    'jigsaw is not defined',
-    'ComboSearch is not defined',
-    'http://loading.retry.widdit.com/',
-    'atomicFindClose',
+    "originalCreateNotification",
+    "canvas.contentDocument",
+    "MyApp_RemoveAllHighlights",
+    "http://tt.epicplay.com",
+    "Can't find variable: ZiteReader",
+    "jigsaw is not defined",
+    "ComboSearch is not defined",
+    "http://loading.retry.widdit.com/",
+    "atomicFindClose",
     // Facebook borked
-    'fb_xd_fragment',
+    "fb_xd_fragment",
     // ISP "optimizing" proxy - `Cache-Control: no-transform` seems to reduce this. (thanks @acdha)
     // See http://stackoverflow.com/questions/4113268/how-to-stop-javascript-injection-from-vodafone-proxy
-    'bmi_SafeAddOnload',
-    'EBCallBackMessageReceived',
+    "bmi_SafeAddOnload",
+    "EBCallBackMessageReceived",
     // See http://toolbar.conduit.com/Developer/HtmlAndGadget/Methods/JSInjection.aspx
-    'conduitPage',
+    "conduitPage",
     // Generic error code from errors outside the security sandbox
-    'Script error.',
+    "Script error.",
   ],
   denyUrls: [
     // Facebook flakiness
